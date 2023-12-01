@@ -1,0 +1,108 @@
+<html>  
+ <head>  
+  <title>Form in HTML</title>  
+  <style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: white;  
+}  
+	fieldset{
+	background-color:50px solid blue;
+	}
+	legend{
+	margin:8px 8px;
+	color:blue;
+	background-color: white;
+	}
+	label[gender]{
+	width:50%;
+	}
+button {   
+       background-color: red;   
+       width: 20%;  
+        color: white;   
+        padding: 15px;   
+        margin: 10px 5px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password],input[type=email] {   
+        width: 50%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid red;   
+        box-sizing: border-box;   
+    } 
+ input[type=radio]{
+        accent-color:black;
+
+ }
+
+ input[type=area]{
+        width:50%;
+	    margin:8px 0;
+	    padding :12px 20px;
+        display:inline-block;
+	    border:2px solid red;
+	    box-sizing:border-box;
+}
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: 20%;   
+        padding: 15px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 50px;   
+        background-color: lightblue;  
+    }   
+</style>
+</head>  
+ <body>  
+     <h2>Registration form</h2>  
+    <form method="post" action="Login.html" >  
+     <fieldset class="details">  
+        <legend><strong>User Personal Information</strong></legend> 
+		</br>		
+        <label>Name</label><br>  
+        <input type="text" placeholder="Enter your full name" name="name" required><br>  
+		</br>
+         <label>E-mail</label><br>  
+         <input type="email" placeholder="Enter your email" name="email" required><br> 
+		 </br>		 
+         <label>Password</label><br>  
+         <input type="password" placeholder="Enter a Strong password" name="pass" required><br> 
+		 </br>
+         <label>Confirm Password</label><br>  
+         <input type="password" placeholder="Confirm you password" name="pass" required><br>
+		 </br>
+		 <fieldset class="gender">
+		 <label for="gender">Select your Gender</label>  </br>
+         <input type="radio" id="black" name="gender" value="male"/>Male  <br>  
+         <input type="radio" id="black" name="gender" value="female"/>Female <br/>    
+         <input type="radio" id="black" name="gender" value="others"/>Others <br/>  
+		 </fieldset>
+		 <!--</br>-->		 
+          <br>Address 1<br>  
+         <input type="area" placeholder="Area"> 
+		 </br>
+		 <br>Address 2<br>  
+         <input type="area" placeholder="City">
+		 </br>
+		 <br>Address 3<br>  
+         <input type="area" placeholder="Country">  
+		 </br>
+         <button type="submit" class="Register">Register</button> 
+		 <button type="button" class="cancelbtn"> Cancel</button> 		 
+     </fieldset>  
+  </form>  
+ </body>  
+</html>  

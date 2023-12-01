@@ -1,0 +1,256 @@
+<html>
+<title>STUDENT LIST</title>
+<h1 style="color:#810541;font-size:40px;font-family:georgian"><center><b>ABC COLLEGE OF ARTS & SCIENCE</b></center></h1>
+<h2 style="color:#4CC417;font-size:30px;font-family:georgian"><center>STUDENT DATABSE</center></h2>
+<body>
+<h3 style="color:#0000FF;font-size:20px;font-family:georgian">
+
+<script>
+function getvalue()
+{
+//var name=document.getElementById("txtname").value;
+//var regno=document.getElementById("txtregno").value;
+var rollno=document.getElementById("txtrollno").value;
+//var class=document.form1.name.value;
+var dept=document.getElementById("txtdept").value;
+}
+</script>
+<form>
+Name : <input type="text" id="txtname"/></br>
+</br>
+RegNo : <input type="text" id="txtregno"/></br>
+</br>
+RollNo  :  <input type="text" id="txtrollno"/></br>
+</form>
+<form>
+<div>
+<label for="class">Class : </label>
+<select name="class" id="class">
+<optgroup label="First Year">
+<option value="I CS A">I CS A</option>
+<option value="I CS B">I CS B</option>
+<option value="I CS C">I CS C</option></optgroup>
+<optgroup label="Second Year">
+<option value="II CS A">II CS A</option>
+<option value="II CS B">II CS B</option>
+<option value="II CS C">II CS C</option></optgroup>
+<optgroup label="Third Year">
+<option value="III CS A">III CS A</option>
+<option value="III CS B">III CS B</option>
+<option value="III CS C">III CS C</option></optgroup></select>
+</div>
+</form>
+
+<script>
+function gender()
+{
+var allgender=document.getElementByName("gender");
+}
+gender();
+</script>
+
+<div>
+Gender :
+<form>
+<input type=radio name="gender" value="male"/>Male</br>
+<input type=radio name="gender" value="female"/>Female
+</form>
+</div>
+<form>
+Department : <input type="text" name="txtdept"/></br>
+</form>
+<script>
+function ten()
+{
+var tenthmark=document.getElementById("number").value;
+}
+ten();
+</script>
+<form>
+10th Percentage  :  <input type="text" name="tenthmark"/>
+</form>
+
+<script>
+function twelve()
+{
+var twelthmark=document.getElementById("number").value;
+}
+twelve();
+</script>
+
+<form>
+12th Percentage  :  <input type="text" name="twelthmark"/>
+</form>
+
+
+<script>
+function report()
+{
+var grade="";
+var result="";
+var CPP=document.getElementById("mark1").value;
+var C=document.getElementById("mark2").value;
+var PYTHON=document.getElementById("mark3").value;
+var JAVA=document.getElementById("mark4").value;
+var HTML=document.getElementById("mark5").value;
+var totalmarks=CPP-(-C)-(-PYTHON)-(-JAVA)-(-HTML);
+
+
+//alert("Total is "+totalmarks);
+var averagemarks=totalmarks/5;
+var percentage=(totalmarks/500)*100;
+
+
+//alert("Percentage is "+percentage);
+switch(
+(averagemarks>60 && averagemarks <=100)?1:
+(averagemarks>50 && averagemarks <=60)?2:
+(averagemarks>40 && averagemarks <=50)?3:
+(averagemarks==40)?4:0
+)
+{
+case 1 :grade = "A";result="First Class";break;
+case 2 :grade="B";result="Second Class";break;
+case 3 :grade="C";result="Third Class";break;
+case 4 :grade="D";result="Just Pass";break;
+case 0 :grade="NO";result="Fail";break;
+}
+document.getElementById("txtstudentname").value=document.getElementById("txtname").value;
+document.getElementById("txtstudentregno").value=document.getElementById("txtregno").value;
+document.getElementById("txttotalmarks").value=totalmarks;
+document.getElementById("txtaveragemarks").value=averagemarks;
+document.getElementById("txtpercentage").value=percentage;
+document.getElementById("txtgrade").value=grade;
+document.getElementById("txtresult").value=result;
+}
+
+</script>
+<h4 style="color:#FF0000;font-size:20px;font-family:georgian"><b><i>SEMESTER IV</i></b></h4>
+<table border="1" cellpadding="5" cellspacing="5" bordercolor="#FFFF00" bgcolor="#F67280">
+<tr><th>SUBJECT</th><th>MARK</th><th>ATTENDANCE</th></tr>
+<tr><td>CPP</td><td><input type="text" id="mark1"/></td><td><center><input type=checkbox id="mark1"/></center></td></tr>
+<tr><td>C</td><td><input type="text" id="mark2"/></td><td><center><input type=checkbox id="mark2"/></center></td></tr>
+<tr><td>PYTHON</td><td><input type="text" id="mark3"/></td><td><center><input type=checkbox id="mark3"/></center></td></tr>
+<tr><td>JAVA</td><td><input type="text" id="mark4"/></td><td><center><input type=checkbox id="mark4"/></center></td></tr>
+<tr><td>HTML</td><td><input type="text" id="mark5"/></td><td><center><input type=checkbox id="mark5"/></center></td></tr>
+</table>
+</br>
+<input type=button onclick=report() value=" GET RESULT "/>
+
+<h4 style="color:#046307;font-size:20px;font-family:georgian"><b><i>REPORT CARD</i></b></h4>
+
+<table border="1" cellpadding="10" cellspacing="10" bordercolor="#FFFF00" bgcolor="#6AFB92">
+<tr><td><b>NAME</b></td><td><input type="text" id="txtstudentname"/></td></tr>
+<tr><td><b>REGNO</b></td><td><input type="text" id="txtstudentregno"/></td></tr>
+<tr><td><b>TOTAL MARKS</b></td><td><input type="text" id="txttotalmarks"/></td></tr
+<tr><td><b>AVERAGE MARKS</b></td><td><input type="text" id="txtaveragemarks"/></td></tr>
+<tr><td><b>PERCENTAGE</b></td><td><input type="text" id="txtpercentage"/></td></tr>
+<tr><td><b>GRADE</b></td><td><input type="text" id="txtgrade"/></td></tr>
+<tr><td><b>RESULT</b></td><td><input type="text" id="txtresult"/></td></tr>
+</table>
+<script>
+function CPPmark()
+{
+var CPP=document.getElementById("mark1").value;
+if(CPP<=40)
+{alert("Pass in CPP"+CPP);
+}
+else{
+alert("Fail in CPP"+CPP);
+}
+}
+</script>
+<script>
+function Cmark()
+{
+var C=document.getElementById("mark2").value;
+if(C<=40)
+{alert("Pass in C"+C);
+}
+else
+{
+alert("Fail in C"+C);
+}
+}
+</script>
+<script>
+function PYTHONmark()
+{
+var PYTHON=document.getElementById("mark3").value;
+if(PYTHON<=40)
+{alert("Pass in PYTHON"+PYTHON);
+}
+else
+{
+alert("Fail in PYTHON"+PYTHON);
+}
+}
+</script>
+<script>
+function JAVAmark()
+{
+var JAVA=document.getElementById("mark4").value;
+if(JAVA<=40)
+{alert("Pass in JAVA"+JAVA);
+}
+else
+{
+alert("Fail in JAVA"+JAVA);
+}
+}
+</script>
+<script>
+function HTMLmark()
+{
+var HTML=document.getElementById("mark5").value;
+if(HTML<=40)
+{alert("Pass in HTML"+HTML);
+}
+else{
+alert("Fail in HTML"+HTML);
+}
+}
+</script>
+<h5 style="color:#046307;font-size:20px;font-family:georgian"><b><i> RESULT </i></b></h5>
+<form><table border="1" cellpadding="5" cellspacing="5" bordercolor="#0000FF" bgcolor="#F8B88B">
+<tr><th>SUBJECT</th><th>PASS OR FAIL</th><th>CHECK</th></tr>
+<tr><td>CPP</td><td><input type="text" id="mark1"/></td><td><input type=button onclick=CPPmark() value=" Result "/></td></tr>
+<tr><td>C</td><td><input type="text" id="mark2"/></td><td><input type=button onclick=Cmark() value=" Result "/></td></tr>
+<tr><td>PYTHON</td><td><input type="text" id="mark3"/></td><td><input type=button onclick=PYTHONmark() value=" Result "/></td></tr>
+<tr><td>JAVA</td><td><input type="text" id="mark4"/></td><td><input type=button onclick=JAVAmark() value=" Result "/></td></tr>
+<tr><td>HTML</td><td><input type="text" id="mark5"/></td><td><input type=button onclick=HTMLmark() value=" Result "/></td></tr>
+</table>
+</form>
+
+</br>
+<input type=button onclick="getvalue() gender() tne() twelve() report() CPPmark() Cmark() PYTHONmark() JAVAmark() HTMLmark()" value="   SUBMIT  ">
+<!--
+
+<script>
+function result()
+{
+var mark=document.getElementById("m1").value;
+var P&F="";
+document.getElementById("mark1").value=document.getElementById("m1").value;
+if(CPP>=40){
+P&F="PASS";
+document.getElementById("txtP&F").value=P&F;}
+else{
+P&F="FAIL";
+document.getElementById("txtP&F").value=P&F;}
+
+}
+</script>-->
+<!--
+<table border="1">
+<tr><th>SUBJECT</th><th>PASS OR FAIL</th></tr>
+<tr><td>CPP</td><td><input type="text" id="txtP&F"/><input type=button onclick=result() value="Check"/></td></tr>
+<tr><td>C</td><td><input type="text" id="txtP&F"/><input type=button onclick=result() value="Check"/></td></tr>
+<tr><td>PYTHON</td><td><input type="text" id="txtP&F"/><input type=button onclick=result() value="Check"/></td></tr>
+<tr><td>JAVA</td><td><input type="text" id="txtP&F"/><input type=button onclick=result() value="Check"/></td></tr>
+<tr><td>HTML</td><td><input type="text" id="txtP&F"/><input type=button onclick=result() value="Check"/></td></tr>
+</table>-->
+</br>
+</body> 
+</h3>
+</html>
